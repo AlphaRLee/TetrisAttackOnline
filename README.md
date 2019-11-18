@@ -15,3 +15,5 @@ Once you finish that, do the following:
 2. Run `npm install`
 3. Change directories to `client`
 4. Run `npm install` again.
+
+You can run the server-side application using `node server.js` and run the client-side application by first changing to the `client` directory and then running `npm start`.
