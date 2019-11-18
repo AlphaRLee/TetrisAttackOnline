@@ -1,5 +1,8 @@
 import io from "socket.io-client";
-const socket = io("http://localhost:3001");
+// const ip = "localhost";
+const ip = "192.168.43.197";
+const port = "3001";
+const socket = io(`http://${ip}:${port}`);
 
 // FIXME choose a better name
 function apiTest() {
