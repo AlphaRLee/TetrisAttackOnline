@@ -10,7 +10,7 @@ export default function sketch(p) {
 	let backgroundCol = 255;
 
 	p.setup = function() {
-		p.createCanvas(800, 800); // createCanvas replaces the Java size() function
+		p.createCanvas(600, 800); // createCanvas replaces the Java size() function
 		// p.createCanvas(800, 800, p.WEBGL); // Enabling WebGL changes coordinate (0, 0) to center of sketch
 
 		p.textSize(30);
