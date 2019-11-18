@@ -13,7 +13,7 @@ const server = http.createServer(app);
 //Create socket using the instance of the server
 const io = socketIO(server);
 
-// Socket IO stuff
+// Socket IO handler
 io.on("connection", socket => {
 	console.log("User connected");
 	socket.on("disconnect", () => {
@@ -23,6 +23,10 @@ io.on("connection", socket => {
 	socket.on("join", name => {
 		console.log("join message received from " + name);
 		socket.emit("joined", `Hello ${name}, you have successfully joined`);
+	});
+
+	socket.on("submitPlayerName", name => {
+		console.log(`Player ${name} has joined the lobby.`);
 	});
 });
 

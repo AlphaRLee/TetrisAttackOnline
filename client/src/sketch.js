@@ -7,8 +7,6 @@
 	https://github.com/processing/p5.js/wiki/Processing-transition
 */
 export default function sketch(p) {
-	let backgroundCol = 255;
-
 	p.setup = function() {
 		p.createCanvas(600, 800); // createCanvas replaces the Java size() function
 		// p.createCanvas(800, 800, p.WEBGL); // Enabling WebGL changes coordinate (0, 0) to center of sketch
@@ -17,13 +15,9 @@ export default function sketch(p) {
 	};
 
 	p.draw = function() {
-		p.background(backgroundCol);
+		p.background(0);
 
 		p.fill(128);
 		p.text(p.mouseX.toString() + ", " + p.mouseY.toString(), 100, 100);
-	};
-
-	p.touchStarted = function() {
-		backgroundCol = backgroundCol === 255 ? 0 : 255;
 	};
 }

@@ -4,6 +4,10 @@ const ip = "192.168.43.197";
 const port = "3001";
 const socket = io(`http://${ip}:${port}`);
 
+function emit(event, data) {
+	socket.emit(event, data);
+}
+
 // FIXME choose a better name
 function apiTest() {
 	socket.on("joined", output => console.log(output));
@@ -14,4 +18,8 @@ function send() {
 	socket.emit("join", "Franky");
 }
 
-export { apiTest, send };
+function submitPlayerName(playerName) {
+	emit("submitPlayerName", playerName);
+}
+
+export { apiTest, send, submitPlayerName };
