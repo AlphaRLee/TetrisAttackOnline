@@ -1,23 +1,15 @@
 import React, { Component } from "react";
+import { apiTest, send } from "./api";
 
 class App extends Component {
-	state = { game: {} };
-
-	componentDidMount() {
-		fetch("/game")
-			.then(res => res.json())
-			.then(game => this.setState({ game }));
+	constructor(props) {
+		super(props);
+		apiTest();
 	}
 
 	render() {
-		const { game } = this.state;
-
-		return (
-			<div className="App">
-				<h1>{game.name}</h1>
-				<p>{game.description}</p>
-			</div>
-		);
+		send();
+		return <h1>Hello world</h1>;
 	}
 }
 

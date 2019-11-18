@@ -3,7 +3,7 @@ const http = require("http");
 const socketIO = require("socket.io");
 
 // Localhost port
-const port = 4001;
+const port = 3001;
 
 const app = express();
 
@@ -18,6 +18,11 @@ io.on("connection", socket => {
 	console.log("User connected");
 	socket.on("disconnect", () => {
 		console.log("User disconnected");
+	});
+
+	socket.on("join", name => {
+		console.log("join message received from " + name);
+		socket.emit("joined", `Hello ${name}, you have successfully joined`);
 	});
 });
 
